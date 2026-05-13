@@ -55,7 +55,7 @@
 <body>
 
     <audio id="birthday-song" loop muted playsinline>
-        <source src="https://github.com/NimzJR/Dewmini/blob/main/SaveTik.io_7587009872601058581.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/NimzJR/Dewmini/8b9b14f06b9c89ab37e012d06c3d722cbdbe8898/SaveTik.io_7587009872601058581.mp3" type="audio/mpeg">
     </audio>
 
     <div id="overlay" onclick="startExperience()">
@@ -75,7 +75,7 @@
 
         <div class="card-wrapper hidden" id="cardWrapper">
             <div id="birthday-card">
-                <img src="https://i.postimg.cc/sXHFNncd/Whats-App-Image-2026-02-11-at-11-25-08.jpg" alt="Dewmini" class="profile-pic">
+                <img src="https://raw.githubusercontent.com/NimzJR/Dewmini/8b9b14f06b9c89ab37e012d06c3d722cbdbe8898/IMG_2688.jpeg" alt="Dewmini" class="profile-pic">
                 <h2 class="card-h2">Happy 21st Birthday</h2>
                 <span class="name">Dewmini!</span>
                 <p class="wish">"Forget the mistakes of the past and learn from them. Just believe in yourself and keep shining, girl!"</p>
@@ -92,9 +92,7 @@
 
         function startExperience() {
             song.muted = true;
-            song.play().then(() => {
-                console.log("Audio unlocked successfully");
-            }).catch(e => console.log("Audio prep error:", e));
+            song.play().catch(e => console.log("Playback error:", e));
 
             const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -105,12 +103,11 @@
                 document.getElementById('main').style.display = 'flex';
                 
                 const group = document.getElementById('candleGroup');
-                // වයස 21 නිසා ඉටිපන්දම් 21ක් එක් කළා
+                // 21 ඉටිපන්දම් සමබරව (7 බැගින් කොටස් 3කට)
                 for(let i=0; i<21; i++) {
                     let c = document.createElement('div');
                     c.className = 'candle';
                     let f = document.createElement('div');
-                    // නිවන කොටස් 3කට බෙදීම සඳහා (7 බැගින්)
                     let g = (i < 7) ? 0 : (i < 14) ? 1 : 2;
                     f.className = 'flame group-' + g;
                     c.appendChild(f);
@@ -180,12 +177,4 @@
         }
     </script>
 </body>
-</html>
-
-    <title>Pen</title>
-  </head>
-  <body>
-
-    <script src="./script.js"></script>
-  </body>
 </html>
