@@ -35,34 +35,33 @@
         .cake { width: 180px; height: 80px; background: #4e342e; border-radius: 15px 15px 0 0; position: relative; border-top: 6px solid #6d4c41; }
         .cake-base { width: 220px; height: 12px; background: #fdf2f2; border-radius: 10px; }
         
-        /* රූපයේ පරිදි එක කෙළින් සැකසීමට */
+        /* ඉටිපන්දම් මදක් විශාල කර එක පෙළට සැකසීම */
         .candles { 
             position: absolute; 
-            top: -22px; /* කේක් එක මත හරියටම පිහිටුවීමට */
+            top: -26px; /* උස අනුව වෙනස් කරන ලදී */
             width: 100%; 
             display: flex; 
             justify-content: center; 
-            align-items: flex-end; /* සියල්ල පහළ මට්ටමට සමපාත කරයි */
+            align-items: flex-end; 
             flex-wrap: nowrap;
-            padding: 0 5px;
         }
         .candle { 
-            width: 3px; 
-            height: 22px; 
+            width: 4px; /* මහත මදක් වැඩි කළා */
+            height: 26px; /* උස මදක් වැඩි කළා */
             background: #f472b6; 
-            margin: 0 1.5px; /* එකිනෙකට සමීපව තැබීමට */
+            margin: 0 1.2px; 
             position: relative; 
             border-radius: 2px; 
         }
         .flame { 
             position: absolute; 
-            width: 6px; 
-            height: 10px; 
+            width: 8px; /* ගින්න මදක් විශාල කළා */
+            height: 12px; 
             background: #fbbf24; 
             border-radius: 50%; 
-            top: -10px; 
-            left: -1.5px; 
-            box-shadow: 0 0 10px #fbbf24; 
+            top: -12px; 
+            left: -2px; 
+            box-shadow: 0 0 12px #fbbf24; 
             transition: opacity 0.2s ease-out; 
         }
         .flame.off { opacity: 0; visibility: hidden; }
@@ -135,7 +134,6 @@
                     let c = document.createElement('div');
                     c.className = 'candle';
                     let f = document.createElement('div');
-                    // නිවන කොටස් 3
                     let g = (i < 7) ? 0 : (i < 14) ? 1 : 2;
                     f.className = 'flame group-' + g;
                     c.appendChild(f);
