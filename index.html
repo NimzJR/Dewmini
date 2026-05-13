@@ -35,22 +35,22 @@
         .cake { width: 180px; height: 90px; background: #4e342e; border-radius: 5px 5px 0 0; position: relative; border-top: 4px solid #3e2723; }
         .cake-base { width: 220px; height: 12px; background: #fdf2f2; border-radius: 10px; }
         
-        /* image_2.png රූපයේ පරිදි ඉතා නිවැරදිව සැකසූ ඉටිපන්දම් පේළිය */
+        /* ඉටිපන්දම් image_2.png හි ඇති පරිදි නිවැරදි ප්‍රමාණයෙන් */
         .candles { 
             position: absolute; 
-            top: -24px; /* ඉටිපන්දම් කේක් එක මත වාඩි වන උස */
-            width: 172px; /* කේක් එකේ පළලට ගැලපෙන සේ */
+            top: -24px; 
+            width: 172px; 
             display: flex; 
             justify-content: space-around; 
             align-items: flex-end; 
             padding: 0 4px;
         }
         .candle { 
-            width: 5px; /* image_2.png හි ඇති මහත */
+            width: 5px; 
             height: 24px; 
             background: #f472b6; 
             position: relative; 
-            border-radius: 1px; 
+            border-radius: 1.5px; 
         }
         .flame { 
             position: absolute; 
@@ -59,7 +59,7 @@
             background: #fbbf24; 
             border-radius: 50%; 
             top: -12px; 
-            left: -2px; 
+            left: -1.8px; 
             box-shadow: 0 0 12px #fbbf24; 
             transition: opacity 0.2s ease-out; 
         }
@@ -129,11 +129,11 @@
                 document.getElementById('main').style.display = 'flex';
                 
                 const group = document.getElementById('candleGroup');
+                // Dewmini සඳහා ඉටිපන්දම් 21ක්
                 for(let i=0; i<21; i++) {
                     let c = document.createElement('div');
                     c.className = 'candle';
                     let f = document.createElement('div');
-                    // නිවන කොටස් 3
                     let g = (i < 7) ? 0 : (i < 14) ? 1 : 2;
                     f.className = 'flame group-' + g;
                     c.appendChild(f);
@@ -162,7 +162,7 @@
                 }
                 detect();
             } catch (err) { 
-                alert("මයික් Access ලබා දී ඉටි පන්දම් නිවන්න! 🎤"); 
+                alert("මයික් Access දීලා ඉටි පන්දම් නිවන්න! 🎤"); 
             }
         }
 
