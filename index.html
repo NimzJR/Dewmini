@@ -34,9 +34,19 @@
         .cake-area { position: relative; display: flex; flex-direction: column; align-items: center; animation: floating 3s ease-in-out infinite; }
         .cake { width: 180px; height: 80px; background: #4e342e; border-radius: 15px 15px 0 0; position: relative; border-top: 6px solid #6d4c41; }
         .cake-base { width: 220px; height: 12px; background: #fdf2f2; border-radius: 10px; }
-        .candles { position: absolute; top: -24px; width: 100%; display: flex; justify-content: center; flex-wrap: wrap; }
-        .candle { width: 5px; height: 24px; background: #f472b6; margin: 2px; position: relative; border-radius: 2px; }
-        .flame { position: absolute; width: 8px; height: 12px; background: #fbbf24; border-radius: 50%; top: -12px; left: -1.5px; box-shadow: 0 0 12px #fbbf24; transition: opacity 0.2s ease-out; }
+        
+        /* ඉටිපන්දම් කේක් එක පුරා බෙදා හැරීම */
+        .candles { 
+            position: absolute; 
+            top: -24px; 
+            width: 160px; /* කේක් එකේ පළලට ගැලපෙන සේ */
+            left: 10px;
+            display: flex; 
+            justify-content: space-around; /* ඉඩ සමානව බෙදා හරී */
+            flex-wrap: wrap; 
+        }
+        .candle { width: 4px; height: 24px; background: #f472b6; margin: 2px 3px; position: relative; border-radius: 2px; }
+        .flame { position: absolute; width: 8px; height: 12px; background: #fbbf24; border-radius: 50%; top: -12px; left: -2px; box-shadow: 0 0 12px #fbbf24; transition: opacity 0.2s ease-out; }
         .flame.off { opacity: 0; visibility: hidden; }
 
         .card-wrapper { position: relative; width: 85%; max-width: 340px; padding: 3px; background: linear-gradient(0deg, transparent, #fbbf24, #fbbf24, transparent); border-radius: 30px; overflow: hidden; display: flex; justify-content: center; align-items: center; }
@@ -92,7 +102,7 @@
 
         function startExperience() {
             song.muted = true;
-            song.play().catch(e => console.log("Playback error:", e));
+            song.play().catch(e => console.log(e));
 
             const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -103,11 +113,12 @@
                 document.getElementById('main').style.display = 'flex';
                 
                 const group = document.getElementById('candleGroup');
-                // 21 ඉටිපන්දම් සමබරව (7 බැගින් කොටස් 3කට)
+                // 21 ඉටිපන්දම් සමබරව එක් කිරීම
                 for(let i=0; i<21; i++) {
                     let c = document.createElement('div');
                     c.className = 'candle';
                     let f = document.createElement('div');
+                    // කොටස් 3කට නිවීමට (7 බැගින්)
                     let g = (i < 7) ? 0 : (i < 14) ? 1 : 2;
                     f.className = 'flame group-' + g;
                     c.appendChild(f);
