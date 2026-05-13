@@ -32,36 +32,35 @@
         #instruction span { display: inline-block; animation: blowEmoji 1.5s ease-in-out infinite; }
 
         .cake-area { position: relative; display: flex; flex-direction: column; align-items: center; animation: floating 3s ease-in-out infinite; }
-        .cake { width: 180px; height: 80px; background: #4e342e; border-radius: 15px 15px 0 0; position: relative; border-top: 6px solid #6d4c41; }
+        .cake { width: 180px; height: 90px; background: #4e342e; border-radius: 5px 5px 0 0; position: relative; border-top: 4px solid #3e2723; }
         .cake-base { width: 220px; height: 12px; background: #fdf2f2; border-radius: 10px; }
         
-        /* ඉටිපන්දම් මහත කර කේක් එක පුරා බෙදා හැරීම */
+        /* image_2.png රූපයේ පරිදි ඉතා නිවැරදිව සැකසූ ඉටිපන්දම් පේළිය */
         .candles { 
             position: absolute; 
-            top: -28px; 
-            width: 170px; 
+            top: -24px; /* ඉටිපන්දම් කේක් එක මත වාඩි වන උස */
+            width: 172px; /* කේක් එකේ පළලට ගැලපෙන සේ */
             display: flex; 
-            justify-content: space-between; /* කේක් එකේ මුළු පළලම ආවරණය කිරීමට */
+            justify-content: space-around; 
             align-items: flex-end; 
-            flex-wrap: nowrap;
+            padding: 0 4px;
         }
         .candle { 
-            width: 5.5px; /* මහත තවත් වැඩි කළා */
-            height: 28px; 
+            width: 5px; /* image_2.png හි ඇති මහත */
+            height: 24px; 
             background: #f472b6; 
-            margin: 0 1px; 
             position: relative; 
-            border-radius: 3px; 
+            border-radius: 1px; 
         }
         .flame { 
             position: absolute; 
-            
-            height: 14px; 
+            width: 9px; 
+            height: 12px; 
             background: #fbbf24; 
             border-radius: 50%; 
-            top: -14px; 
-            left: -2.2px; 
-            box-shadow: 0 0 15px #fbbf24; 
+            top: -12px; 
+            left: -2px; 
+            box-shadow: 0 0 12px #fbbf24; 
             transition: opacity 0.2s ease-out; 
         }
         .flame.off { opacity: 0; visibility: hidden; }
