@@ -35,33 +35,33 @@
         .cake { width: 180px; height: 80px; background: #4e342e; border-radius: 15px 15px 0 0; position: relative; border-top: 6px solid #6d4c41; }
         .cake-base { width: 220px; height: 12px; background: #fdf2f2; border-radius: 10px; }
         
-        /* ඉටිපන්දම් මදක් විශාල කර එක පෙළට සැකසීම */
+        /* ඉටිපන්දම් මහත කර කේක් එක පුරා බෙදා හැරීම */
         .candles { 
             position: absolute; 
-            top: -26px; /* උස අනුව වෙනස් කරන ලදී */
-            width: 100%; 
+            top: -28px; 
+            width: 170px; 
             display: flex; 
-            justify-content: center; 
+            justify-content: space-between; /* කේක් එකේ මුළු පළලම ආවරණය කිරීමට */
             align-items: flex-end; 
             flex-wrap: nowrap;
         }
         .candle { 
-            width: 6px; /* මහත මදක් වැඩි කළා */
-            height: 26px; /* උස මදක් වැඩි කළා */
+            width: 5.5px; /* මහත තවත් වැඩි කළා */
+            height: 28px; 
             background: #f472b6; 
-            margin: 0 1.2px; 
+            margin: 0 1px; 
             position: relative; 
-            border-radius: 2px; 
+            border-radius: 3px; 
         }
         .flame { 
             position: absolute; 
-            width: 8px; /* ගින්න මදක් විශාල කළා */
-            height: 12px; 
+            width: 10px; /* ගින්න වඩාත් පැහැදිලි කළා */
+            height: 14px; 
             background: #fbbf24; 
             border-radius: 50%; 
-            top: -12px; 
-            left: -2px; 
-            box-shadow: 0 0 12px #fbbf24; 
+            top: -14px; 
+            left: -2.2px; 
+            box-shadow: 0 0 15px #fbbf24; 
             transition: opacity 0.2s ease-out; 
         }
         .flame.off { opacity: 0; visibility: hidden; }
@@ -134,6 +134,7 @@
                     let c = document.createElement('div');
                     c.className = 'candle';
                     let f = document.createElement('div');
+                    // නිවන කොටස් 3
                     let g = (i < 7) ? 0 : (i < 14) ? 1 : 2;
                     f.className = 'flame group-' + g;
                     c.appendChild(f);
